@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Calculadora</title>
+
+<style type="text/css">
+
+		input {
+			border-color: #EA202C;
+			border-radius: 5px;
+			border-top-color: #EA202C;
+			background-color: #EBF7E3;
+			font-family: "Comic Sans MS", cursive, sans-serif;
+
+		}
+
+		form{
+
+  			font-size: medium;
+  			font-family: "Comic Sans MS", cursive, sans-serif;
+		}
+
+		#texto{
+			color: #EBF7E3;
+			background-color: #123;
+			border-radius: 5px 5px 5px 5px ;
+			height: 265px;
+			width: 750px;
+		}
+
+		#Topo{
+
+			text-align: center;
+			width: 500px;
+			height: 90px;
+			background-color:#559E54;
+			border-radius: 10px 10px 10px 10px  ;
+		}
+
+		#Corpo{
+				/*definimos a largura do box*/
+			width:350px;
+				/* definimos a altura do box */
+			height:395px;
+				/* definimos a cor de fundo do box */
+			background-color:#559E54;
+				/* definimos o quão arredondado irá ficar nosso box */
+			border-radius: 1px 35px 1px 35px;
+
+		/*	color:#340933; */
+
+			color: #EBF7E3;
+		}
+
+		#Body{
+			
+			/*background-image: url(./Imagens/img.jpeg) ;*/
+			text-align: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: #EBF7E3;
+		}
+
+		#H1{
+			font-family: "Trebuchet MS", Helvetica, sans-serif;
+			color: #EBF7E3;
+			font-size: 37px;
+			text-shadow: -2px 0px #091034;
+			text-shadow: 0px -2px #091034;
+		}
+
+		#Botao{
+			border-top-color: #EA202C;
+			border-color: #EA202C;
+			border-radius: 5px;
+			background-color: #EBF7E3;
+			font-family: "Comic Sans MS", cursive, sans-serif;
+			color:#091034;
+		}
+
+	</style>
+
+</head>
+
+<body id="Body">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+	<center>
+
+		<div id="Topo">
+		
+			<h1 id="H1">Calculadora de Juros Compostos</h1>
+		
+		</div>
+	<br>
+	<br>
+
+	<div id="Corpo">
+
+<form> 
+
+	<br>
+		Investimento Inicial
+	<br>
+    	<input id="Inicial" >
+	<br>
+	<br>
+		 Valor das Aplicações Mensais
+	<br>
+		<input id="Vmes" >
+	<br>
+	<br>
+ 		Taxa de Juros Aplicadas ao Mês
+ 	<br>
+		<input id="JurosMes" >
+	<br>
+	<br>
+ 		Tempo de Investimento
+ 	<br>
+		<input id="TempoI">
+	<br>
+	<br>
+		<input type="button" id="Botao" value="Calcular" onclick="myFunction()">
+	<br>
+	<br>
+
+		<a id="demo"></a>
+
+</form>
+
+</div>
+
+</center>
+
+</body>
+
+<script>
+
+		function myFunction() {
+			
+			var p = parseFloat(document.getElementById("Inicial").value) ; 
+			var t = parseFloat(document.getElementById("Vmes").value) ; 
+			var i = parseFloat(document.getElementById("JurosMes").value) ; 
+			var n = document.getElementById("TempoI").value ;
+
+			console.log(p);
+			console.log(t);
+			console.log(i);
+			console.log(n); 
+
+			var JurosPer = i / 100 ; 
+
+		    document.getElementById("demo").innerHTML = ( p * Math.pow((1+i), n) + t * (Math.pow((1 + i), n) - 1 ) / i  ).toFixed(2);    
+		}
+
+</script>
+
+</html>
