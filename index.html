@@ -169,12 +169,6 @@
 			var t = parseFloat(document.getElementById("Vmes").value) ; 
 			var i = parseFloat(document.getElementById("JurosMes").value) ; 
 			var n = document.getElementById("TempoI").value ;
-
-			console.log(p);
-			console.log(t);
-			console.log(i);
-			console.log(n); 
-
 			var JurosPer = i / 100 ; 
 
 		    document.getElementById("demo").innerHTML = ( p * Math.pow((1+JurosPer), n) + t * (Math.pow((1 + JurosPer), n) - 1 ) / JurosPer  ).toFixed(2);    
