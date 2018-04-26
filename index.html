@@ -43,7 +43,7 @@
 				/*definimos a largura do box*/
 			width:350px;
 				/* definimos a altura do box */
-			height:395px;
+			height:425px;
 				/* definimos a cor de fundo do box */
 			background-color:#559E54;
 				/* definimos o quão arredondado irá ficar nosso box */
@@ -140,14 +140,18 @@
 	<br>
  		Tempo de Investimento
  	<br>
-		<input id="TempoI">
+		<input id="TempoI" p>
 	<br>
 	<br>
 		<input type="button" id="Botao" value="Calcular" onclick="myFunction()">
 	<br>
 	<br>
+		Resultado:
+	<br>
+		<input name="demo"  readonly="true">
 
-		<a id="demo"></a>
+
+	<!--	<a id="demo"></a>  -->
 
 </form>
 
@@ -169,9 +173,15 @@
 			var t = parseFloat(document.getElementById("Vmes").value) ; 
 			var i = parseFloat(document.getElementById("JurosMes").value) ; 
 			var n = document.getElementById("TempoI").value ;
+
+			console.log(p);
+			console.log(t);
+			console.log(i);
+			console.log(n); 
+
 			var JurosPer = i / 100 ; 
 
-		    document.getElementById("demo").innerHTML = ( p * Math.pow((1+JurosPer), n) + t * (Math.pow((1 + JurosPer), n) - 1 ) / JurosPer  ).toFixed(2);    
+		    document.querySelector("[name='demo']").value = "R$ " + ( p * Math.pow((1+JurosPer), n) + t * (Math.pow((1 + JurosPer), n) - 1 ) / JurosPer  ).toFixed(2);    
 		}
 
 </script>
